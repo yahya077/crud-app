@@ -1,0 +1,584 @@
+{
+	"info": {
+		"_postman_id": "cc284581-e493-4ef9-8ee2-fc3b0b9a472d",
+		"name": "Note-Crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "note",
+							"value": "test note 2",
+							"type": "text"
+						},
+						{
+							"key": "major",
+							"value": "low",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "active",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{apiRoot}}/notes",
+					"host": [
+						"{{apiRoot}}"
+					],
+					"path": [
+						"notes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Note",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "note",
+									"value": "test note 2",
+									"type": "text"
+								},
+								{
+									"key": "major",
+									"value": "low",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiRoot}}/notes",
+							"host": [
+								"{{apiRoot}}"
+							],
+							"path": [
+								"notes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:42:20 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:42:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"note\": \"test note 2\",\n        \"major\": \"low\",\n        \"status\": \"active\",\n        \"updated_at\": \"2021-04-05T11:42:20.000000Z\",\n        \"created_at\": \"2021-04-05T11:42:20.000000Z\",\n        \"id\": 3\n    }\n}"
+				},
+				{
+					"name": "Create Note with Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "note",
+									"value": "test note 2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiRoot}}/notes",
+							"host": [
+								"{{apiRoot}}"
+							],
+							"path": [
+								"notes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:34:18 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:34:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Error occurred\",\n    \"errors\": {\n        \"status\": false,\n        \"message\": \"A title is required\",\n        \"data\": {\n            \"note\": [\n                \"A title is required\"\n            ]\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Read Note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiRoot}}/notes",
+					"host": [
+						"{{apiRoot}}"
+					],
+					"path": [
+						"notes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Read Note",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiRoot}}/notes",
+							"host": [
+								"{{apiRoot}}"
+							],
+							"path": [
+								"notes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:30:21 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:30:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "56"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Notes are listed\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"note\": \"test note\",\n            \"major\": \"low\",\n            \"status\": \"active\",\n            \"created_at\": \"2021-04-05T11:01:55.000000Z\",\n            \"updated_at\": \"2021-04-05T11:01:55.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Note",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "note",
+							"value": "test note updated",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{apiRoot}}/notes/1",
+					"host": [
+						"{{apiRoot}}"
+					],
+					"path": [
+						"notes",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Note",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "note",
+									"value": "test note updated",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiRoot}}/notes/1",
+							"host": [
+								"{{apiRoot}}"
+							],
+							"path": [
+								"notes",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:15:33 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:15:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"note\": \"test note\",\n        \"major\": \"low\",\n        \"status\": \"active\",\n        \"created_at\": \"2021-04-05T11:01:55.000000Z\",\n        \"updated_at\": \"2021-04-05T11:01:55.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Note",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{apiRoot}}/notes/2",
+					"host": [
+						"{{apiRoot}}"
+					],
+					"path": [
+						"notes",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Note",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiRoot}}/notes/2",
+							"host": [
+								"{{apiRoot}}"
+							],
+							"path": [
+								"notes",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:15:09 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:15:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiRoot}}/notes/1",
+					"host": [
+						"{{apiRoot}}"
+					],
+					"path": [
+						"notes",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Note",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiRoot}}/notes/1",
+							"host": [
+								"{{apiRoot}}"
+							],
+							"path": [
+								"notes",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:36:14 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Apr 2021 11:36:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Selected note is showing\",\n    \"data\": {\n        \"id\": 1,\n        \"note\": \"test note\",\n        \"major\": \"low\",\n        \"status\": \"active\",\n        \"created_at\": \"2021-04-05T11:01:55.000000Z\",\n        \"updated_at\": \"2021-04-05T11:01:55.000000Z\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "root",
+			"value": "http://127.0.0.1:8000"
+		},
+		{
+			"key": "apiRoot",
+			"value": "http://127.0.0.1:8000/api"
+		}
+	]
+}
